@@ -7,7 +7,6 @@ public class Livro {
 	private int totPaginas;
 	private int pagAtual;
 	private boolean aberto;
-	private String leitor;
 	
 	public String getTitulo() {
 		return titulo;
@@ -38,12 +37,6 @@ public class Livro {
 	}
 	public void setAberto(boolean aberto) {
 		this.aberto = aberto;
-	}
-	public String getLeitor() {
-		return leitor;
-	}
-	public void setLeitor(String leitor) {
-		this.leitor = leitor;
 	}
 	
 	
