@@ -22,19 +22,21 @@ public class LivroRepository implements IPublicacao {
 	@Override
 	public void abrir(Livro l) {
 		l.setAberto(true);
-		
+		System.out.println("");
+		System.out.println("O Livro " + l.getTitulo() + " Está Aberto.");
 	}
 
 	@Override
 	public void fechar(Livro l) {
 		l.setAberto(false);
-		
+		System.out.println("");
+		System.out.println("O Livro " + l.getTitulo() + " Está Fechado.");
 	}
 
 	@Override
 	public void folhear(Livro l) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("");
+		System.out.println("O Livro está na Página " + l.getPagAtual());
 	}
 
 	@Override
@@ -44,9 +46,12 @@ public class LivroRepository implements IPublicacao {
 		int avancar = (l.getPagAtual() +1);
 		
 		if (avancar > total) {
+			System.out.println("");
 			System.out.println("Desculpe, mais você já chegou na última Página.");
 		} else {
 			l.setPagAtual(l.getPagAtual() + 1);
+			System.out.println("");
+			System.out.println("O Livro foi para a página: " +  l.getPagAtual());
 		}
 	}
 
@@ -55,10 +60,13 @@ public class LivroRepository implements IPublicacao {
 		int retorno = (l.getPagAtual() - 1);
 		
 		if (retorno <= 0) {
+			System.out.println("");
 			System.out.println("Desculpe, mas você está no início da página.");
 		}
 		else {
 			l.setPagAtual(l.getPagAtual() - 1);
+			System.out.println("");
+			System.out.println("O Livro foi para a página: " +  l.getPagAtual());
 		}
 	}
 }

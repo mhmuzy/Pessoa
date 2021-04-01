@@ -11,6 +11,6 @@ public class LeituraRepository {
 		leit.setPessoa(p);
 		
 		System.out.println("");
-		System.out.println("Pessoa " + leit.getPessoa() + "Lê o livro " + leit.getLivro());
+		System.out.println("Pessoa " + leit.getPessoa().getNome() + " Lê o livro " + leit.getLivro().getTitulo());
 	}
 }
