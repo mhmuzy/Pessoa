@@ -134,3 +134,42 @@ java.io.IOException: O processo não pode acessar o arquivo porque outro process
 	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:207)
 	at org.eclipse.egit.ui.internal.staging.StagingView$52.run(StagingView.java:3433)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2021-04-03 20:02:37.921
+!MESSAGE O processo não pode acessar o arquivo porque outro processo bloqueou parte do arquivo
+!STACK 0
+java.io.IOException: O processo não pode acessar o arquivo porque outro processo bloqueou parte do arquivo
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:257)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:107)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:88)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:207)
+	at org.eclipse.egit.ui.internal.staging.StagingView$52.run(StagingView.java:3433)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2021-04-03 20:03:18.359
+!MESSAGE Cannot lock C:\Henrique\Pessoa\.git\index. Ensure that no other process has an open file handle on the lock file C:\Henrique\Pessoa\.git\index.lock, then you may delete the lock file and retry.
+!STACK 0
+org.eclipse.jgit.errors.LockFailedException: Cannot lock C:\Henrique\Pessoa\.git\index. Ensure that no other process has an open file handle on the lock file C:\Henrique\Pessoa\.git\index.lock, then you may delete the lock file and retry.
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:218)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:289)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:255)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1269)
+	at org.eclipse.egit.core.RepositoryHandle.lockDirCache(RepositoryHandle.java:318)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:122)
+	at org.eclipse.egit.ui.internal.staging.StagingView$52.run(StagingView.java:3433)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2021-04-03 20:04:00.282
+!MESSAGE Cannot lock C:\Henrique\Pessoa\.git\index. Ensure that no other process has an open file handle on the lock file C:\Henrique\Pessoa\.git\index.lock, then you may delete the lock file and retry.
+!STACK 0
+org.eclipse.jgit.errors.LockFailedException: Cannot lock C:\Henrique\Pessoa\.git\index. Ensure that no other process has an open file handle on the lock file C:\Henrique\Pessoa\.git\index.lock, then you may delete the lock file and retry.
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:218)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:289)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:255)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1269)
+	at org.eclipse.egit.core.RepositoryHandle.lockDirCache(RepositoryHandle.java:318)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:122)
+	at org.eclipse.egit.ui.internal.staging.StagingView$52.run(StagingView.java:3433)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
