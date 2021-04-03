@@ -1,0 +1,69 @@
+package Hitss.Treinamento.Apresentacao;
+
+import java.util.Scanner; /// *** Assembly
+
+import Hitss.Treinamento.Infra.*; /// *** Camada de Infra
+
+public class Program {
+	public static void main(String[] args) {
+		try {
+			/// *** Inicialização do Tratamento
+		
+		System.out.println(""); /// *** Pula 1 Linha para o Enunciado do Programa Não Ficar muito Colado em Cima
+		System.out.println("Programa da Livraria:"); /// *** Enunciado do Programa
+		System.out.println(""); /// *** Pula mais 1 Linha Para o Aviso ao Usuário não ficar colado com o Enunciado do Programa
+		System.out.println("Selecione a opção desejada."); /// *** Aviso de Orientação ao Usuário Para Poder Manusear o Programa
+		System.out.println(""); /// *** Pula mais 1 Linha Para a Lista de Opções de Manuseio do Programa Não ficar colado com a Orientação de 
+		/// *** Manuseio Para o(a) Usuário(a)
+		System.out.println("--------------------------------------------------------------------"); /// *** Conceito de Perfumaria
+		System.out.println("(1) - Ver se o(a) Cliente Faz Aniversário Hoje"); /// *** Opção 1 => Para  ver se o(a) Cliente Faz Aniversário Hoje
+		System.out.println("(2) - Registrar a Leitura da Pessoa"); /// *** Opção 2 => Para Registrar o Registro da Leitura do(a) Cliente
+		System.out.println("(3) - Mostrar Detalhes do Livro"); /// *** Opção 3 => Mostrar os Detalhes do Livro
+		System.out.println("(4) - Abrir Livro"); /// *** Opção 4 => Abrir o Livro
+		System.out.println("(5) - Fechar Livro"); /// *** Opção 5 => Fechar o Livro
+		System.out.println("(6) - Ver aonde Parou na Página do Livro"); /// *** Opção 6 => Ver aonde Parou na Página do Livro
+		System.out.println("(7) - Avançar Página do Livro"); /// *** Opção 7 => Avançar a Página do Livro
+		System.out.println("(8) - Retornar Página do Livro"); /// *** Opção 8 => Retroceder a Página do Livro
+		System.out.println("--------------------------------------------------------------------"); /// *** Conceito de Perfumaria
+		System.out.println(""); /// *** Pula 1 Linha Para o Cursor de opção não ficar colado com o Menu de Opção
+		Scanner teclado = new Scanner(System.in); /// *** Comando para digitar a Opção no Teclado
+		
+		int opcao = teclado.nextInt(); /// *** Declaração da Variável Opção
+		Controller control = new Controller(); /// *** Instância do Objeto Controller
+		switch (opcao) { /// *** O Início do Switch Case para Iniciar o Funcionamento do Programa e Coloca a variável opção como Parâmetro
+		case 1: /// *** Caso a Opção seja 1
+			
+			control.BuscarAniversario(); /// *** A Controller efetuará a Função de Aniversário
+			break; /// *** Para a Execução do Programa
+		case 2: /// *** Caso a Opção Seja 2
+			control.EfetuarLeituraPessoa(); /// *** A Controller vai Efetuar a Função de Efetutar a Leitura da Pessoa Com o Livro
+			break; /// *** Para a Execução do Programa
+		case 3: /// *** Caso a Opção Seja 3
+			control.MostrarDetalhesLivro(); /// *** A Controller vai Efetuar a Função de Mostrar os Detalhes do Livro
+			break; /// *** Para a Execução do Programa
+		case 4: /// *** Caso a Opção Seja 4
+			control.AbrirLivro(); /// *** A Controller vai Efetuar a Função de Abrir o Livro
+			break; /// *** Para a Execução do Programa
+		case 5: /// *** Caso a Opção Seja 5
+			control.FecharLivro(); /// *** Controller vai fechar o Livro 
+			break; /// *** Para a Execução do Programa
+		case 6: /// *** Caso a Opção Seja 6
+			control.VerPagParouLivro(); /// *** O Programa vai ver a Página que parou o Livro
+			break; /// *** Para a Execução do Programa
+		case 7: /// *** Caso a Opção Seja 7
+			control.AvancPag(); /// *** A Controller vai avançar a Página do Livro
+			break; /// *** Para a Execução do Programa
+		case 8: /// *** Caso a Opção Seja 8
+			control.ReturnPag(); /// *** A Controller retorna a Página
+			break; /// *** Para a Execução do Programa
+		default: /// *** Padrão
+			System.out.println("");
+			System.out.println("Por favor, digite a opção informada.");
+			break;
+		}
+		} catch (Exception e) {
+			System.out.println("");
+			System.out.println("Erro: " + e.getMessage());
+		}
+	}
+}
