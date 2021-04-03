@@ -43,27 +43,28 @@ public class Program {
 			break; /// *** Para a Execução do Programa
 		case 4: /// *** Caso a Opção Seja 4
 			control.AbrirLivro(); /// *** A Controller vai Efetuar a Função de Abrir o Livro
-			break;
-		case 5:
-			control.FecharLivro();
-			break;
-		case 6:
-			control.VerPagParouLivro();
-			break;
-		case 7:
-			control.AvancPag();
-			break;
-		case 8:
-			control.ReturnPag();
-			break;
-		default:
-			System.out.println("");
-			System.out.println("Por favor, digite a opção informada.");
-			break;
-		}
-		} catch (Exception e) {
-			System.out.println("");
-			System.out.println("Erro: " + e.getMessage());
-		}
+			break; /// *** Para a Execução do Programa
+		case 5: /// *** Caso a Opção Seja 5
+			control.FecharLivro(); /// *** Controller vai fechar o Livro 
+			break; /// *** Para a Execução do Programa
+		case 6: /// *** Caso a Opção Seja 6
+			control.VerPagParouLivro(); /// *** O Programa vai ver a Página que parou o Livro
+			break; /// *** Para a Execução do Programa
+		case 7: /// *** Caso a Opção Seja 7
+			control.AvancPag(); /// *** A Controller vai avançar a Página do Livro
+			break; /// *** Para a Execução do Programa
+		case 8: /// *** Caso a Opção Seja 8
+			control.ReturnPag(); /// *** A Controller retorna a Página
+			break; /// *** Para a Execução do Programa
+		default: /// *** Padrão
+			System.out.println(""); /// *** Pula 1 Linha
+			System.out.println("Por favor, digite a opção informada."); /// *** O Programa Pede Para 
+			/// *** Digitar a Opção Informada
+			break; /// *** Para a Execução do Programa
+		} /// *** Finaliza o Switch Case
+		} catch (Exception e) { /// *** Faz a Captura do Erro
+			System.out.println(""); /// *** Pula 1 linha
+			System.out.println("Erro: " + e.getMessage()); /// *** O Programa mostra o erro capturado
+		} /// *** Finalização do Tratamento
 	}
 }

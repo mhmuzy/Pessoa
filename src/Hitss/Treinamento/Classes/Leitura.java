@@ -1,7 +1,7 @@
 package Hitss.Treinamento.Classes;
 
-import Hitss.Treinamento.Classes.*;
-public class Leitura {
+import Hitss.Treinamento.Classes.*; /// *** Importando a Classe
+public class Leitura { /// *** Inicialização da Criação da Classe Leitura
 	
     private Pessoa pessoa;
     private Livro livro;
