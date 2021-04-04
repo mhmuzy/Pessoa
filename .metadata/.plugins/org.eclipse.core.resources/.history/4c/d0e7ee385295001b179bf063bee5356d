@@ -1,0 +1,43 @@
+package Hitss.Treinamento.Classes;
+
+public class Livro { /// *** Declaração da Entidade Livro
+	
+	private String titulo; /// *** Atributo Título
+	private String autor; /// *** Atributo Autor
+	private int totPaginas; /// *** Atributo Total de Páginas
+	private int pagAtual; /// *** Atributo Página Atual
+	private boolean aberto; /// *** Atributo Aberto
+	
+	public String getTitulo() { /// *** Método GetTitulo
+		return titulo;
+	}
+	public void setTitulo(String titulo) { /// *** Método SetTitulo
+		this.titulo = titulo;
+	}
+	public String getAutor() { /// *** Método GetAutor
+		return autor;
+	}
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+	public int getTotPaginas() {
+		return totPaginas;
+	}
+	public void setTotPaginas(int totPaginas) {
+		this.totPaginas = totPaginas;
+	}
+	public int getPagAtual() {
+		return pagAtual;
+	}
+	public void setPagAtual(int pagAtual) {
+		this.pagAtual = pagAtual;
+	}
+	public boolean isAberto() {
+		return aberto;
+	}
+	public void setAberto(boolean aberto) {
+		this.aberto = aberto;
+	}
+	
+	
+}
