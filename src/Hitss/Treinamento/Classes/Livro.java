@@ -1,41 +1,41 @@
 package Hitss.Treinamento.Classes;
 
-public class Livro {
+public class Livro { /// *** Declaração da Entidade Livro
 	
-	private String titulo;
-	private String autor;
-	private int totPaginas;
-	private int pagAtual;
-	private boolean aberto;
+	private String titulo; /// *** Atributo Título
+	private String autor; /// *** Atributo Autor
+	private int totPaginas; /// *** Atributo Total de Páginas
+	private int pagAtual; /// *** Atributo Página Atual
+	private boolean aberto; /// *** Atributo Aberto
 	
-	public String getTitulo() {
+	public String getTitulo() { /// *** Método GetTitulo
 		return titulo;
 	}
-	public void setTitulo(String titulo) {
+	public void setTitulo(String titulo) { /// *** Método SetTitulo
 		this.titulo = titulo;
 	}
-	public String getAutor() {
+	public String getAutor() { /// *** Método GetAutor
 		return autor;
 	}
-	public void setAutor(String autor) {
+	public void setAutor(String autor) { /// *** Método SetAutor
 		this.autor = autor;
 	}
-	public int getTotPaginas() {
+	public int getTotPaginas() { /// *** Método GetPaginas
 		return totPaginas;
 	}
-	public void setTotPaginas(int totPaginas) {
+	public void setTotPaginas(int totPaginas) { /// *** Método SetPaginas
 		this.totPaginas = totPaginas;
 	}
-	public int getPagAtual() {
+	public int getPagAtual() { /// *** Método GetPaginaAtual
 		return pagAtual;
 	}
-	public void setPagAtual(int pagAtual) {
+	public void setPagAtual(int pagAtual) { /// *** Método SetPaginaAtual
 		this.pagAtual = pagAtual;
 	}
-	public boolean isAberto() {
+	public boolean isAberto() { /// *** Método IsAberto
 		return aberto;
 	}
-	public void setAberto(boolean aberto) {
+	public void setAberto(boolean aberto) { /// *** Método SetAberto
 		this.aberto = aberto;
 	}
 	
