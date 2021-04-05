@@ -345,334 +345,357 @@ public class Controller { /// *** Controllers
 		int j = teclado.nextInt(); /// *** Declaração da Variável Para Digitar o Código do Livro Pelo Teclado
 		Livro livro = new Livro(); /// *** Instância da Entidade Livro
 		
-		if (j == CodigoLivro[j]) 
-		{
+		if (j == CodigoLivro[j]) /// *** Se a Variável Código do Livro For igual ao Vetor Código do Livro
+		{ /// *** Abre Chaves
 			
-			livro.setTitulo(Titulo[j]);
-			livro.setAutor(Autor[j]);
-			livro.setTotPaginas(TotPaginas[j]);
-			livro.setPagAtual(PagAtual[j]);
-			livro.setAberto(Aberto[j]);
-			String aberto = livro.isAberto() == true? "Sim": "Não";
-			System.out.println("");
+			livro.setTitulo(Titulo[j]); /// *** O Atributo Título Recebe o Vetor Título
+			livro.setAutor(Autor[j]); /// *** O Atributo Vetor Recebe o Vetor Autor
+			livro.setTotPaginas(TotPaginas[j]); /// *** O Atributo Total de Páginas Recebe o Vetor Total de Páginas
+			livro.setPagAtual(PagAtual[j]); /// *** O Atributo Página Atual Recebe o Vetor Página Atual 
+			livro.setAberto(Aberto[j]); /// *** O Atributo que Define se o Livro está Aberto ou Não Recebe o Vetor que Define 
+			/// *** Se o Livro está aberto ou Não
+			String aberto = livro.isAberto() == true? "Sim": "Não"; /// *** Declaração da Variábvel que Define se o Livro está 
+			/// *** Aberto ou Não se Estiver vai aparecer Sim, Caso o Contrário vai aparecer Não
+			System.out.println(""); /// *** Dá uma Quebrada de Linha
 			
-			LivroRepository rep = new LivroRepository();
-			rep.abrir(livro);
-		}else {
-			System.out.println("");
-			System.out.println("        Resultado da Consulta:");
-			System.out.println("---------------------------------------");
-			System.out.println("Nenhum resultado encontrado.");
-			System.out.println("---------------------------------------");
-			System.out.println("T");
-		}
+			LivroRepository rep = new LivroRepository(); /// *** Declaração do Repositório Livro
+			rep.abrir(livro); /// *** Função de Abrir Livro do Repositório
+		}else { /// *** Caso não encontre nenhum Livro
+			System.out.println(""); /// *** Dá uma quebrada de linha
+			System.out.println("        Resultado da Consulta:"); /// *** Título do Resultado da Consulta
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println("Nenhum resultado encontrado."); /// *** O Aviso de que nehum resultado foi encontrado
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println(""); /// *** Dá uma Quebrada de Linha
+		} /// *** Fim do If
 		
-		} catch (Exception e) {
-			System.out.println("");
-			System.out.println("        Resultado da Consulta:");
-			System.out.println("---------------------------------------");
-			System.out.println("Nenhum resultado encontrado.");
-			System.out.println("---------------------------------------");
-			System.out.println("");
-		}
-	}
+		} catch (Exception e) { /// *** Captura do Tratamento
+			System.out.println(""); /// *** Da uma Quebrada de Linha
+			System.out.println("        Resultado da Consulta:"); /// *** Título do Resultado da Busca
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println("Nenhum resultado encontrado."); /// *** O Aviso de que nenhum resultado foi encontrado
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println(""); /// *** Da uma quebrada de linha
+		} /// *** Fim Da Captura do Erro
+	} /// *** Fim do Método
 	
-	public void FecharLivro() {
-		try
-		{
-		int[] CodigoLivro = new int[5];
-		CodigoLivro[1] = 1;
-		CodigoLivro[2] = 2;
-		CodigoLivro[3] = 3;
-		CodigoLivro[4] = 4;
+	public void FecharLivro() { /// *** Inicialização do Método Fechar Livro
+		try /// *** Inicialização do Tratamento
+		{ /// *** Abre Chaves
+		int[] CodigoLivro = new int[5]; /// *** Vetor Código do Livro
+		CodigoLivro[1] = 1; /// *** Código do Livro 1
+		CodigoLivro[2] = 2; /// *** Código do Livro 2
+		CodigoLivro[3] = 3; /// *** Código do Livro 3
+		CodigoLivro[4] = 4; /// *** Código do Livro 4
 		
-		String[] Titulo = new String[5];
-		Titulo[1] = "O Pequeno Príncipe";
-		Titulo[2] = "Turma da Mônica";
-		Titulo[3] = "Harry Potter";
-		Titulo[4] = "Senhor dos Aneis";
+		String[] Titulo = new String[5]; /// *** Vetor Título
+		Titulo[1] = "O Pequeno Príncipe"; /// *** Título 1
+		Titulo[2] = "Turma da Mônica"; /// *** Título 2
+		Titulo[3] = "Harry Potter"; /// *** Título 3
+		Titulo[4] = "Senhor dos Aneis"; /// *** Título 4
 		
-		String[] Autor = new String[5];
-		Autor[1] = "Maurício de Souza";
-		Autor[2] = "Maurício de Souza";
-		Autor[3] = "Paulo Bandeira";
-		Autor[4] = "Paulo Bandeira";
+		String[] Autor = new String[5]; /// *** Vetor Autor 
+		Autor[1] = "Maurício de Souza"; /// *** Autor 1
+		Autor[2] = "Maurício de Souza"; /// *** Autor 2
+		Autor[3] = "Paulo Bandeira"; /// *** Autor 3
+		Autor[4] = "Paulo Bandeira"; /// *** Autor 4
 		
-		int[] TotPaginas = new int[5];
-		TotPaginas[1] = 20;
-		TotPaginas[2] = 20;
-		TotPaginas[3] = 200;
-		TotPaginas[4] = 200;
+		int[] TotPaginas = new int[5]; /// *** Vetor Total de Páginas
+		TotPaginas[1] = 20; /// *** Total de Páginas 1
+		TotPaginas[2] = 20; /// *** Total de Páginas 2
+		TotPaginas[3] = 200; /// *** Total de Páginas 3
+		TotPaginas[4] = 200; /// *** Total de Paginas 4
 		
-		int[] PagAtual = new int[5];
-		PagAtual[1] = 15;
-		PagAtual[2] = 15;
-		PagAtual[3] = 120;
-		PagAtual[4] = 120;
+		int[] PagAtual = new int[5]; /// *** Vetor Página Atual
+		PagAtual[1] = 15; /// *** Página Atual 1
+		PagAtual[2] = 15; /// *** Página Atual 2
+		PagAtual[3] = 120; /// *** Página Atual 3
+		PagAtual[4] = 120; /// *** Página Atual 4
 		
-		boolean[] Aberto = new boolean[5];
-		Aberto[1] = true;
-		Aberto[2] = true;
-		Aberto[3] = true;
-		Aberto[4] = true;
+		boolean[] Aberto = new boolean[5]; /// *** Vetor Aberto
+		Aberto[1] = true; /// *** Aberto 1
+		Aberto[2] = true; /// *** Aberto 2
+		Aberto[3] = true; /// *** Aberto 3
+		Aberto[4] = true; /// *** Aberto 4
 		
-		Scanner teclado = new Scanner(System.in); 
-		System.out.println("");
-		System.out.println("Digite o Código do Livro:");
-		int j = teclado.nextInt();
-		Livro livro = new Livro();
+		Scanner teclado = new Scanner(System.in);  /// *** Comando Para Digitar o 
+		/// *** Código do Livro Pelo Teclado
+		System.out.println(""); /// *** Dá uma quebrada de linha
+		System.out.println("Digite o Código do Livro:"); /// *** O Programa Pede Para digitar 
+		/// *** O Código do Livro
+		int j = teclado.nextInt(); /// *** Declaração da Variável Para Digutar o Código do Livro 
+		/// *** Pelo Teclado
+		Livro livro = new Livro(); /// *** Instância da Entidade Livro
 		
-		if (j == CodigoLivro[j]) 
-		{
+		if (j == CodigoLivro[j]) /// *** Se a Variável Código do Livro For igual ao Vetor Código do 
+			/// *** Livro
+		{ /// *** Abre Chaves
+			livro.setTitulo(Titulo[j]); /// *** Atributo Título Recebe o Vetor Título
+			livro.setAutor(Autor[j]); /// *** Atributo Autor Recebe o Vetor Autor
+			livro.setTotPaginas(TotPaginas[j]); /// *** Atributo Total de Páginas Recebe o Vetor 
+			/// *** Total de Páginas
+			livro.setPagAtual(PagAtual[j]); /// *** Atributo Página Atual Recebe o Vetor Página Atual
+			livro.setAberto(Aberto[j]); /// *** Atributo que Define se o Livro está aberto ou Não Recebe 
+			/// *** O Vetor que Define se o Livro está aberto ou Não
+			String aberto = livro.isAberto() == true? "Sim": "Não"; /// *** Declaração da Variável Aberto que 
+			/// *** Define se o Livro está ou não aberto se estiver vai estar Sim, caso contrário vai estar Não
+			System.out.println(""); /// *** Da uma Quebrada de Linha
 			
-			livro.setTitulo(Titulo[j]);
-			livro.setAutor(Autor[j]);
-			livro.setTotPaginas(TotPaginas[j]);
-			livro.setPagAtual(PagAtual[j]);
-			livro.setAberto(Aberto[j]);
-			String aberto = livro.isAberto() == true? "Sim": "Não";
-			System.out.println("");
-			
-			LivroRepository rep = new LivroRepository();
-			rep.fechar(livro);
-		}else {
-			System.out.println("");
-			System.out.println("        Resultado da Consulta:");
-			System.out.println("---------------------------------------");
-			System.out.println("Nenhum resultado encontrado.");
-			System.out.println("---------------------------------------");
-			System.out.println("T");
-		}
+			LivroRepository rep = new LivroRepository(); /// *** Declaração do Repositório Livro
+			rep.fechar(livro); /// *** Repositório Atua o Método de Fechar Livro
+		}else { /// *** Caso na Consulta do Livro Não Encontre nenhum Resultado
+			System.out.println(""); /// *** Da uma Quebrada de Linha
+			System.out.println("        Resultado da Consulta:"); /// *** Título do Resultado da Consulta
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println("Nenhum resultado encontrado."); /// *** O Aviso de que Nenhum Resultado foi 
+			/// *** Encontrado
+			System.out.println("---------------------------------------"); /// *** Conecito de Perfumaria
+			System.out.println(""); /// *** Da uma quebrada de linha
+		} /// *** Fim do If
 		
-		} catch (Exception e) {
-			System.out.println("");
-			System.out.println("        Resultado da Consulta:");
-			System.out.println("---------------------------------------");
-			System.out.println("Nenhum resultado encontrado.");
-			System.out.println("---------------------------------------");
-			System.out.println("");
-		}
-	}
+		} catch (Exception e) { /// *** Início da Captura do Erro
+			System.out.println(""); /// *** Da uma Quebrada de Linha
+			System.out.println("        Resultado da Consulta:"); /// *** Título do Resultado da Consulta
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println("Nenhum resultado encontrado."); /// *** O Aviso de que Nenhum resultado foi encontrado
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println(""); /// *** Dá uma Quebrada de Linha
+		} /// *** Fim da Captura do Erro
+	} /// *** Fim do Método
 	
-	public void VerPagParouLivro() {
-		try
-		{
-		int[] CodigoLivro = new int[5];
-		CodigoLivro[1] = 1;
-		CodigoLivro[2] = 2;
-		CodigoLivro[3] = 3;
-		CodigoLivro[4] = 4;
+	public void VerPagParouLivro() { /// *** Inicialização do Método de Ver a Página aonde Parou no Livri
+		try /// *** Inicialização do Tratamento
+		{ /// *** Abre Chaves
+		int[] CodigoLivro = new int[5]; /// *** Vetor Código do Livro
+		CodigoLivro[1] = 1; /// *** Código do Livro 1
+		CodigoLivro[2] = 2; /// *** Código do Livro 2
+		CodigoLivro[3] = 3; /// *** Código do Livro 3
+		CodigoLivro[4] = 4; /// *** Código do Livro 4
 		
-		String[] Titulo = new String[5];
-		Titulo[1] = "O Pequeno Príncipe";
-		Titulo[2] = "Turma da Mônica";
-		Titulo[3] = "Harry Potter";
-		Titulo[4] = "Senhor dos Aneis";
+		String[] Titulo = new String[5]; /// *** Vetor Título
+		Titulo[1] = "O Pequeno Príncipe"; /// *** Título 1
+		Titulo[2] = "Turma da Mônica"; /// *** Título 2
+		Titulo[3] = "Harry Potter"; /// *** Título 3
+		Titulo[4] = "Senhor dos Aneis"; /// *** Título 4
 		
-		String[] Autor = new String[5];
-		Autor[1] = "Maurício de Souza";
-		Autor[2] = "Maurício de Souza";
-		Autor[3] = "Paulo Bandeira";
-		Autor[4] = "Paulo Bandeira";
+		String[] Autor = new String[5]; /// *** Vetor Autor 
+		Autor[1] = "Maurício de Souza"; /// *** Autor 1
+		Autor[2] = "Maurício de Souza"; /// *** Autor 2
+		Autor[3] = "Paulo Bandeira"; /// *** Autor 3
+		Autor[4] = "Paulo Bandeira"; /// *** Autor 4
 		
-		int[] TotPaginas = new int[5];
-		TotPaginas[1] = 20;
-		TotPaginas[2] = 20;
-		TotPaginas[3] = 200;
-		TotPaginas[4] = 200;
+		int[] TotPaginas = new int[5]; /// *** Vetor Total de Páginas
+		TotPaginas[1] = 20; /// *** Total de Páginas 1
+		TotPaginas[2] = 20; /// *** Total de Páginas 2
+		TotPaginas[3] = 200; /// *** Total de Páginas 3
+		TotPaginas[4] = 200; /// *** Total de Páginas 4
 		
-		int[] PagAtual = new int[5];
-		PagAtual[1] = 15;
-		PagAtual[2] = 15;
-		PagAtual[3] = 120;
-		PagAtual[4] = 120;
+		int[] PagAtual = new int[5]; /// *** Vetor Página Atual
+		PagAtual[1] = 15; /// *** Página Atual 1
+		PagAtual[2] = 15; /// *** Página Atual 2
+		PagAtual[3] = 120; /// *** Página Atual 3
+		PagAtual[4] = 120; /// *** Página Atual 4
 		
-		boolean[] Aberto = new boolean[5];
-		Aberto[1] = true;
-		Aberto[2] = true;
-		Aberto[3] = true;
-		Aberto[4] = true;
+		boolean[] Aberto = new boolean[5]; /// *** Vetor que Define se o Livro está Aberto ou Não
+		Aberto[1] = true; /// *** Aberto 1
+		Aberto[2] = true; /// *** Aberto 2
+		Aberto[3] = true; /// *** Aberto 3
+		Aberto[4] = true; /// *** Aberto 4
 		
-		Scanner teclado = new Scanner(System.in); 
-		System.out.println("");
-		System.out.println("Digite o Código do Livro:");
-		int j = teclado.nextInt();
-		Livro livro = new Livro();
+		Scanner teclado = new Scanner(System.in); /// *** Comando para digitar o valor do Código do Livro 
+		/// *** Pelo Teclado
+		System.out.println(""); /// *** Dá uma Quebrada de Linha
+		System.out.println("Digite o Código do Livro:"); /// *** O Programa Pede Para digitar o Código do Livro
+		int j = teclado.nextInt(); /// *** Declaração da Variável para poder Digitar o Código do Livro
+		Livro livro = new Livro(); /// *** A Instância da Entidade Livro
 		
-		if (j == CodigoLivro[j]) 
-		{
+		if (j == CodigoLivro[j]) /// *** Se a Variável Código do Livro for Igual ao Vetor Código do Livro
+		{ /// *** Abre Chaves
 			
-			livro.setTitulo(Titulo[j]);
-			livro.setAutor(Autor[j]);
-			livro.setTotPaginas(TotPaginas[j]);
-			livro.setPagAtual(PagAtual[j]);
-			livro.setAberto(Aberto[j]);
-			String aberto = livro.isAberto() == true? "Sim": "Não";
-			System.out.println("");
+			livro.setTitulo(Titulo[j]); /// *** Atributo Título Recebe o Vetor Título
+			livro.setAutor(Autor[j]); /// *** Atributo Autor Recebe o Vetor Autor
+			livro.setTotPaginas(TotPaginas[j]); /// *** Atributo Total de Páginas Recebe o Vetor Total de 
+			/// *** Páginas
+			livro.setPagAtual(PagAtual[j]); /// *** Atributo Página Atual Recebe o Vetor Página Atual
+			livro.setAberto(Aberto[j]); /// *** Atributo que Define se o Livro está aberto ou Não Recebe o Vetor Que 
+			/// *** Define se o Livro está aberto ou não 
+			String aberto = livro.isAberto() == true? "Sim": "Não"; /// *** Declaração da Variável que define se o Livro está 
+			/// *** Aberto ou não se estiver ele vai receber a Resposta como Sim caso ao contrário vai receber Não
+			System.out.println(""); /// *** Da uma quebrada de Linha
 			
-			LivroRepository rep = new LivroRepository();
-			rep.folhear(livro);
-		}else {
-			System.out.println("");
-			System.out.println("        Resultado da Consulta:");
-			System.out.println("---------------------------------------");
-			System.out.println("Nenhum resultado encontrado.");
-			System.out.println("---------------------------------------");
-			System.out.println("T");
-		}
+			LivroRepository rep = new LivroRepository(); /// *** Declaração do Repositório Livro
+			rep.folhear(livro); /// *** Repositório Vai Atuar o Método de Folhear Livro
+		}else { /// *** Caso Nenhuma Busca do Livro Foi efetuada
+			System.out.println(""); /// *** Da uma quebrada de Linha
+			System.out.println("        Resultado da Consulta:"); /// *** O Título do Resultado da Consulta
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println("Nenhum resultado encontrado."); /// *** O Aviso de que o Resultado não foi encontrado
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println(""); /// *** Da uma quebrada de linha
+		} /// *** Fim do If
 		
-		} catch (Exception e) {
-			System.out.println("");
-			System.out.println("        Resultado da Consulta:");
-			System.out.println("---------------------------------------");
-			System.out.println("Nenhum resultado encontrado.");
-			System.out.println("---------------------------------------");
-			System.out.println("");
-		}
-	}
+		} catch (Exception e) { /// *** Inicialização da Captura do Erro
+			System.out.println(""); /// *** Dá uma quebrada de Linha
+			System.out.println("        Resultado da Consulta:"); /// *** O Título do Resultado da Consulta
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println("Nenhum resultado encontrado."); /// *** O Aviso de que nehum Resultado foi encontrado 
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println(""); /// *** Dá uma quebrada de linha
+		} /// *** Finalização da Captura do Erro
+	} /// *** Finalização do Método
 	
-	public void AvancPag() {
-		try
-		{
-		int[] CodigoLivro = new int[5];
-		CodigoLivro[1] = 1;
-		CodigoLivro[2] = 2;
-		CodigoLivro[3] = 3;
-		CodigoLivro[4] = 4;
+	public void AvancPag() { /// *** Inicialização do Método de Avançar Páginas do Livro
+		try /// *** Inicialização do Tratamento
+		{ /// *** Abre Chaves
+		int[] CodigoLivro = new int[5]; /// *** Vetor Código do Livro
+		CodigoLivro[1] = 1; /// *** Código do Livro 1
+		CodigoLivro[2] = 2; /// *** Código do Livro 2
+		CodigoLivro[3] = 3; /// *** Código do Livro 3
+		CodigoLivro[4] = 4; /// *** Código do Livro 4
 		
-		String[] Titulo = new String[5];
-		Titulo[1] = "O Pequeno Príncipe";
-		Titulo[2] = "Turma da Mônica";
-		Titulo[3] = "Harry Potter";
-		Titulo[4] = "Senhor dos Aneis";
+		String[] Titulo = new String[5]; /// *** Vetor Título 
+		Titulo[1] = "O Pequeno Príncipe"; /// *** Título 1
+		Titulo[2] = "Turma da Mônica"; /// *** Título 2
+		Titulo[3] = "Harry Potter"; /// *** Título 3
+		Titulo[4] = "Senhor dos Aneis"; /// *** Título 4
 		
-		String[] Autor = new String[5];
-		Autor[1] = "Maurício de Souza";
-		Autor[2] = "Maurício de Souza";
-		Autor[3] = "Paulo Bandeira";
-		Autor[4] = "Paulo Bandeira";
+		String[] Autor = new String[5]; /// *** Vetor Autor 
+		Autor[1] = "Maurício de Souza"; /// *** Autor 1
+		Autor[2] = "Maurício de Souza"; /// *** Autor 2
+		Autor[3] = "Paulo Bandeira"; /// *** Autor 3
+		Autor[4] = "Paulo Bandeira"; /// *** Autor 4
 		
-		int[] TotPaginas = new int[5];
-		TotPaginas[1] = 20;
-		TotPaginas[2] = 20;
-		TotPaginas[3] = 200;
-		TotPaginas[4] = 200;
+		int[] TotPaginas = new int[5]; /// *** Vetor Total de Páginas
+		TotPaginas[1] = 20; /// *** Total de Páginas 1
+		TotPaginas[2] = 20; /// *** Total de Páginas 2
+		TotPaginas[3] = 200; /// *** Total de Páginas 3
+		TotPaginas[4] = 200; /// *** Total de Páginas 4
 		
-		int[] PagAtual = new int[5];
-		PagAtual[1] = 15;
-		PagAtual[2] = 15;
-		PagAtual[3] = 120;
-		PagAtual[4] = 120;
+		int[] PagAtual = new int[5]; /// *** Vetor Página Atual
+		PagAtual[1] = 15; /// *** Página Atual 1
+		PagAtual[2] = 15; /// *** Página Atual 2
+		PagAtual[3] = 120; /// *** Página Atual 3
+		PagAtual[4] = 120; /// *** Página Atual 4
 		
-		boolean[] Aberto = new boolean[5];
-		Aberto[1] = true;
-		Aberto[2] = true;
-		Aberto[3] = true;
-		Aberto[4] = true;
+		boolean[] Aberto = new boolean[5]; /// *** Vetor que Define se o Livro está aberto ou Não
+		Aberto[1] = true; /// *** Aberto 1
+		Aberto[2] = true; /// *** Aberto 2
+		Aberto[3] = true; /// *** Aberto 3
+		Aberto[4] = true; /// *** Aberto 4
 		
-		Scanner teclado = new Scanner(System.in); 
-		System.out.println("");
-		System.out.println("Digite o Código do Livro:");
-		int j = teclado.nextInt();
-		Livro livro = new Livro();
+		Scanner teclado = new Scanner(System.in); /// *** Comando que vai digitar o código do livro pelo 
+		/// *** Teclado
+		System.out.println(""); /// *** Dá uma quebrada de linha
+		System.out.println("Digite o Código do Livro:"); /// *** O Programa Pede Para Digitar o Código do 
+		/// *** Livro
+		int j = teclado.nextInt(); /// *** Declaração da Variável Para Digitar o Código do Livro Pelo Teclado
+		Livro livro = new Livro(); /// *** A Instância da Entidade Livro
 		
-		if (j == CodigoLivro[j]) 
-		{
+		if (j == CodigoLivro[j]) /// *** Se a Variável Código do Livro For Igual ao Vetor Código do Livro
+		{ /// *** Abre Chaves
 			
-			livro.setTitulo(Titulo[j]);
-			livro.setAutor(Autor[j]);
-			livro.setTotPaginas(TotPaginas[j]);
-			livro.setPagAtual(PagAtual[j]);
-			livro.setAberto(Aberto[j]);
-			String aberto = livro.isAberto() == true? "Sim": "Não";
-			System.out.println("");
+			livro.setTitulo(Titulo[j]); /// *** Atributo Título Recebe o Vetor Título
+			livro.setAutor(Autor[j]); /// *** Atributo Autor Recebe o Vetor Autor
+			livro.setTotPaginas(TotPaginas[j]); /// *** Atributo Total de Páginas Vai Receber o Vetor Total 
+			/// *** De Páginas  
+			livro.setPagAtual(PagAtual[j]); /// *** Atributo Página Atual Vai Receber o vetor Página Atual
+			livro.setAberto(Aberto[j]); /// *** Atributo Que Definse se o Livro está aberto ou Não Vai Receber
+			/// *** O Vetor que Define se o Livro está aberto ou Não
+			String aberto = livro.isAberto() == true? "Sim": "Não"; /// *** Declaração da Variável que Determina se o 
+			/// *** Livro está aberto ou Não se Estiver vai estar como Sim, casocontrário vai estar como Não
+			System.out.println(""); /// *** Dá uma quebrada de linha
 			
-			LivroRepository rep = new LivroRepository();
-			rep.avancarPag(livro);
-		}else {
-			System.out.println("");
-			System.out.println("        Resultado da Consulta:");
-			System.out.println("---------------------------------------");
-			System.out.println("Nenhum resultado encontrado.");
-			System.out.println("---------------------------------------");
-			System.out.println("T");
-		}
+			LivroRepository rep = new LivroRepository(); /// *** Declaração do Repositório do Livro
+			rep.avancarPag(livro); /// *** Repositório Vai atuar a Função de Avançar Página
+		}else { /// *** Caso na Consulta não encontre nenhuma Informação
+			System.out.println(""); /// *** Dá uma quebrada de linha
+			System.out.println("        Resultado da Consulta:"); /// *** Título do Resultado da Consulta
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println("Nenhum resultado encontrado."); /// *** O Aviso que nenhum resultado foi encontrado
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println(""); /// *** Da uma quebrada de Linha
+		} /// *** Fim do If
 		
-		} catch (Exception e) {
-			System.out.println("");
-			System.out.println("        Resultado da Consulta:");
-			System.out.println("---------------------------------------");
-			System.out.println("Nenhum resultado encontrado.");
-			System.out.println("---------------------------------------");
-			System.out.println("");
-		}
-	}
+		} catch (Exception e) { /// *** Início da Captura do Erro
+			System.out.println(""); /// *** Da uma quebrada de linha
+			System.out.println("        Resultado da Consulta:"); /// *** Título do Resultado da Consulta
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println("Nenhum resultado encontrado."); /// *** O Aviso do Programa de que nenhum resultado
+			/// *** Foi encontrado
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println(""); /// *** Quebra de linha
+		} /// *** Fim da Captura do Erro
+	} /// *** Fim do Método
 	
-	public void ReturnPag() {
-		try
-		{
-		int[] CodigoLivro = new int[5];
-		CodigoLivro[1] = 1;
-		CodigoLivro[2] = 2;
-		CodigoLivro[3] = 3;
-		CodigoLivro[4] = 4;
+	public void ReturnPag() { /// *** Inicialização do Método Retornar Página
+		try /// *** Inicialização do Tratamento
+		{ /// *** Abre Chaves
+		int[] CodigoLivro = new int[5]; /// *** Vetor Código do Livro
+		CodigoLivro[1] = 1; /// *** Código do Livro 1
+		CodigoLivro[2] = 2; /// *** Código do Livro 2
+		CodigoLivro[3] = 3; /// *** Código do Livro 3
+		CodigoLivro[4] = 4; /// *** Código do Livro 4
 		
-		String[] Titulo = new String[5];
-		Titulo[1] = "O Pequeno Príncipe";
-		Titulo[2] = "Turma da Mônica";
-		Titulo[3] = "Harry Potter";
-		Titulo[4] = "Senhor dos Aneis";
+		String[] Titulo = new String[5]; /// *** Vetor Título
+		Titulo[1] = "O Pequeno Príncipe"; /// *** Título 1
+		Titulo[2] = "Turma da Mônica"; /// *** Título 2
+		Titulo[3] = "Harry Potter"; /// *** Título 3
+		Titulo[4] = "Senhor dos Aneis"; /// *** Título 4
 		
-		String[] Autor = new String[5];
-		Autor[1] = "Maurício de Souza";
-		Autor[2] = "Maurício de Souza";
-		Autor[3] = "Paulo Bandeira";
-		Autor[4] = "Paulo Bandeira";
+		String[] Autor = new String[5]; /// *** Vetor Autor
+		Autor[1] = "Maurício de Souza"; /// *** Autor 1
+		Autor[2] = "Maurício de Souza"; /// *** Autor 2
+		Autor[3] = "Paulo Bandeira"; /// *** Autor 3
+		Autor[4] = "Paulo Bandeira"; /// *** Autor 4
 		
-		int[] TotPaginas = new int[5];
-		TotPaginas[1] = 20;
-		TotPaginas[2] = 20;
-		TotPaginas[3] = 200;
-		TotPaginas[4] = 200;
+		int[] TotPaginas = new int[5]; /// *** Vetor Total de Páginas
+		TotPaginas[1] = 20; /// *** Total de Páginas 1
+		TotPaginas[2] = 20; /// *** Total de Páginas 2
+		TotPaginas[3] = 200; /// *** Total de Páginas 3
+		TotPaginas[4] = 200; /// *** Total de Páginas 4
 		
-		int[] PagAtual = new int[5];
-		PagAtual[1] = 15;
-		PagAtual[2] = 15;
-		PagAtual[3] = 120;
-		PagAtual[4] = 120;
+		int[] PagAtual = new int[5]; /// *** Vetor Página Atual
+		PagAtual[1] = 15; /// *** Página Atual 1
+		PagAtual[2] = 15; /// *** Página Atual 2
+		PagAtual[3] = 120; /// *** Página Atual 3
+		PagAtual[4] = 120; /// *** Página Atual 4
 		
-		boolean[] Aberto = new boolean[5];
-		Aberto[1] = true;
-		Aberto[2] = true;
-		Aberto[3] = true;
-		Aberto[4] = true;
+		boolean[] Aberto = new boolean[5]; /// *** Vetor que Define se o Livro está aberto ou não
+		Aberto[1] = true; /// *** Aberto 1
+		Aberto[2] = true; /// *** Aberto 2
+		Aberto[3] = true; /// *** Aberto 3
+		Aberto[4] = true; /// *** Aberto 4
 		
-		Scanner teclado = new Scanner(System.in); 
-		System.out.println("");
-		System.out.println("Digite o Código do Livro:");
-		int j = teclado.nextInt();
-		Livro livro = new Livro();
+		Scanner teclado = new Scanner(System.in); /// *** Comando Para digitar o Código do Livro pelo Teclado
+		System.out.println(""); /// *** Dá uma quebrada de linha
+		System.out.println("Digite o Código do Livro:"); /// *** O Programa Pede Para Digitar o Código do 
+		/// *** Livro
+		int j = teclado.nextInt(); /// *** Declaração da Variável que Digita o Código do Livro Pelo Teclado
+		Livro livro = new Livro(); /// *** Instância da Entidade Livro
 		
-		if (j == CodigoLivro[j]) 
-		{
+		if (j == CodigoLivro[j]) /// *** Se a Variável Código do Livro For Igual ao Vetor Código do Livro 
+		{ /// *** Abre Parenteses
 			
-			livro.setTitulo(Titulo[j]);
-			livro.setAutor(Autor[j]);
-			livro.setTotPaginas(TotPaginas[j]);
-			livro.setPagAtual(PagAtual[j]);
-			livro.setAberto(Aberto[j]);
-			String aberto = livro.isAberto() == true? "Sim": "Não";
-			System.out.println("");
+			livro.setTitulo(Titulo[j]); /// *** Atributo Título do Livro Recebe o Vetor Código do Livro
+			livro.setAutor(Autor[j]); /// *** Atributo Autor do Livro Recebe o Vetor Autor do Livro
+			livro.setTotPaginas(TotPaginas[j]); /// *** Atributo Total de Págnas Recebe o Vetor Total de 
+			/// *** Páginas
+			livro.setPagAtual(PagAtual[j]); /// *** Atributo Página Atual Recebe o Vetor Página Atual
+			livro.setAberto(Aberto[j]); /// *** Atributo Que Define se o Livro está aberto ou não Recebe o 
+			/// *** Vetor Que Define se o Livro está aberto ou Não
+			String aberto = livro.isAberto() == true? "Sim": "Não"; /// *** Declaração da Variável que Define 
+			/// *** Se o Livro está aberto ou Não se estiver vai estar como Sim, caso contrário vai estar como Não
+			System.out.println(""); /// *** Dá uma quebrada de Linha
 			
-			LivroRepository rep = new LivroRepository();
-			rep.voltarPag(livro);
-		}else {
-			System.out.println("");
-			System.out.println("        Resultado da Consulta:");
-			System.out.println("---------------------------------------");
-			System.out.println("Nenhum resultado encontrado.");
-			System.out.println("---------------------------------------");
-			System.out.println("T");
+			LivroRepository rep = new LivroRepository(); /// *** Declaração do Repoitório Livro
+			rep.voltarPag(livro); /// *** Repositório Vai Atuar a Função Retornar Página do Livro
+		}else { /// *** Caso Nenhuma Consulta Fosse Encontrada
+			System.out.println(""); /// *** Dá uma Quebrada de Linha
+			System.out.println("        Resultado da Consulta:"); /// *** Título do Resultado da Consulta
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println("Nenhum resultado encontrado."); /// *** O Aviso de que nenhum Resultado Foi Encontrado
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println(""); /// *** Dá uma Quebra de Linha
 		}
 		
 		} catch (Exception e) {
