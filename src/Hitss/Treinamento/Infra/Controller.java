@@ -696,15 +696,16 @@ public class Controller { /// *** Controllers
 			System.out.println("Nenhum resultado encontrado."); /// *** O Aviso de que nenhum Resultado Foi Encontrado
 			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
 			System.out.println(""); /// *** Dá uma Quebra de Linha
-		}
+		} /// *** Fim do If
 		
-		} catch (Exception e) {
-			System.out.println("");
-			System.out.println("        Resultado da Consulta:");
-			System.out.println("---------------------------------------");
-			System.out.println("Nenhum resultado encontrado.");
-			System.out.println("---------------------------------------");
-			System.out.println("");
-		}
-	}
-}
+		} catch (Exception e) { /// *** Inicialização da Captura do Erro
+			System.out.println(""); /// *** Da uma quebrada de linha
+			System.out.println("        Resultado da Consulta:"); /// *** O Título do Resultado da Consulta
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println("Nenhum resultado encontrado."); /// *** O Sviso de que nenhum resultado foi 
+			/// *** Encontrado
+			System.out.println("---------------------------------------"); /// *** Conceito de Perfumaria
+			System.out.println(""); /// *** Dá uma Quebrada de Linha
+		} /// *** Fim Da Captura do Erro
+	} /// *** Fim do Método
+} /// *** Fim da Controller
